@@ -1,6 +1,10 @@
 package com.BridgeLabs.StacksAndQueues;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Queue<K> {
+	private static final Logger logger = LogManager.getLogger(Queue.class);
 	LinkedList<K> linkedList = new LinkedList<K>();
 
 	public Queue() {
@@ -31,6 +35,7 @@ public class Queue<K> {
 		queue.enqueue(node1);
 		queue.enqueue(node2);
 		queue.enqueue(node3);
+		logger.debug("Queue: ");
 		queue.printQueue();
 	}
 }
