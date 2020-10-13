@@ -1,16 +1,16 @@
 package com.BridgeLabs.StacksAndQueues;
 
 public class Queue<K> {
-	LinkedList<K> linkedList=new LinkedList<K>();
+	LinkedList<K> linkedList = new LinkedList<K>();
 
 	public Queue() {
 		this.linkedList = new LinkedList<K>();
 	}
-	
+
 	public int size() {
 		return linkedList.size();
 	}
-	
+
 	public boolean isEmpty() {
 		return linkedList.isEmpty();
 	}
@@ -18,11 +18,11 @@ public class Queue<K> {
 	public void printQueue() {
 		linkedList.printList();
 	}
-	
+
 	public void enqueue(INode<K> newNode) {
 		this.linkedList.append(newNode);
 	}
-	
+
 	public static void main(String[] args) {
 		Queue<Integer> queue = new Queue<Integer>();
 		MyNode<Integer> node1 = new MyNode<Integer>(56);
