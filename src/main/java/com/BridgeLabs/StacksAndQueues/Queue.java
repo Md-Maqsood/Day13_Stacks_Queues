@@ -26,6 +26,10 @@ public class Queue<K> {
 	public void enqueue(INode<K> newNode) {
 		this.linkedList.append(newNode);
 	}
+	
+	public INode<K> dequeue(){
+		return linkedList.pop();
+	}
 
 	public static void main(String[] args) {
 		Queue<Integer> queue = new Queue<Integer>();
@@ -35,7 +39,10 @@ public class Queue<K> {
 		queue.enqueue(node1);
 		queue.enqueue(node2);
 		queue.enqueue(node3);
-		logger.debug("Queue: ");
+		logger.debug("Queue before dequeue operation: ");
+		queue.printQueue();
+		logger.debug("First element in the queue is dequeued: "+queue.dequeue().getKey()+"\n");
+		logger.debug("Queue after dequeue operation: ");
 		queue.printQueue();
 	}
 }
