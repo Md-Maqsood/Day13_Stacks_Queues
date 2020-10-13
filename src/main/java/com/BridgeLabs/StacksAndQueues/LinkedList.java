@@ -88,7 +88,7 @@ public class LinkedList<K> {
 	public void printList() {
 		INode<K> node = this.head;
 		if (node != null) {
-			logger.debug("List: " + node.getKey());
+			logger.debug(node.getKey());
 			while ((node = node.getNext()) != null) {
 				logger.debug("->" + node.getKey());
 			}
@@ -143,18 +143,6 @@ public class LinkedList<K> {
 			}
 		}
 	}
-
-	public static void main(String[] args) {
-		LinkedList<Integer> list = new LinkedList<Integer>();
-		MyNode<Integer> node1 = new MyNode<Integer>(56);
-		MyNode<Integer> node2 = new MyNode<Integer>(30);
-		MyNode<Integer> node3 = new MyNode<Integer>(70);
-		list.append(node1);
-		list.append(node3);
-		list.insertAfter(node1, node2);
-		list.printList();
-	}
-
 }
 
 interface INode<K> {
