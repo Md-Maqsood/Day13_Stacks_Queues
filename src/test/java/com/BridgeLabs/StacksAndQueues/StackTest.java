@@ -1,20 +1,35 @@
 package com.BridgeLabs.StacksAndQueues;
 
-import static org.junit.Assert.assertTrue;
-
+import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class StackTest 
-{
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
-    }
+public class StackTest {
+	
+	@Test
+	public void giventhreeNumbersWhenAddedToStackShouldHaveLastAddedNode() {
+		Stack<Integer> stack = new Stack<Integer>();
+		MyNode<Integer> node1 = new MyNode<Integer>(56);
+		MyNode<Integer> node2 = new MyNode<Integer>(30);
+		MyNode<Integer> node3 = new MyNode<Integer>(70);
+		stack.push(node3);
+		stack.push(node2);
+		stack.push(node1);
+		INode myNode = stack.peak();
+		stack.printStack();
+		Assert.assertEquals(node1,myNode);
+	}
+	
+	@Test
+	public void giventhreeNumbersWhenAddedToStackAndPoppedShouldReturnLastAddedNode() {
+		Stack<Integer> stack = new Stack<Integer>();
+		MyNode<Integer> node1 = new MyNode<Integer>(56);
+		MyNode<Integer> node2 = new MyNode<Integer>(30);
+		MyNode<Integer> node3 = new MyNode<Integer>(70);
+		stack.push(node3);
+		stack.push(node2);
+		stack.push(node1);
+		INode myNode = stack.pop();
+		stack.printStack();
+		Assert.assertEquals(node1,myNode);
+	}
 }
