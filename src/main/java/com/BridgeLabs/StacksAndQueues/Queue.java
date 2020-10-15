@@ -27,6 +27,9 @@ public class Queue<K> {
 		this.linkedList.append(newNode);
 	}
 	
+	public INode<K> peak(){
+		return linkedList.head;
+	}
 	public INode<K> dequeue(){
 		return linkedList.pop();
 	}
